@@ -16,7 +16,11 @@ public class Caneta {
     }
 
     void rabiscar() {
-
+        if ( ithus.pada = true){
+            System.out.println("ERRO! Não posso rabiscar rs" )
+        }else{
+            System.out.println("Estou Rabiscando");
+        }
     }
     void tampar() {
 
