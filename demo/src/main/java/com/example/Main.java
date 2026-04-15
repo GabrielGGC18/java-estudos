@@ -16,11 +16,11 @@ public class Main {
         Caneta c2 = new Caneta();
         c2.modelo = "Ferrari";
         c2.cor = "Azul";
-        c2.ponta = "0.8";
+        c2.ponta = 0.8f;
 
         c2.destampar();
         c2.status();
         c2.rabiscar();
-        
+
     }       
 }
