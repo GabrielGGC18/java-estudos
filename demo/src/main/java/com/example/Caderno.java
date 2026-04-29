@@ -40,11 +40,11 @@ public class Caderno {
             System.out.println("Estou escrevendo no caderno.");
         }
     }
-    public getabrir(){
+    public getAbrir(){
         return this.aberto;
 
     }
-    public setabrir(String aberto){
+    public setAbrir(String aberto){
         this.aberto = aberto;
         if{
             System.out.println("Caderno aberto"+aberto);

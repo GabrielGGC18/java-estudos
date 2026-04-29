@@ -31,12 +31,12 @@ public class Caneta {
         System.out.println("A caneta foi destampada");
     }
     public  String getModelo(){
-        return this.modelo=
+        return this.modelo
     }
     public void setModelo(String modelo){
         this.modelo = modelo;
     }
-    public getCarga(){
+    public getCarga(){ 
        return this.carga 
     }
     public void setCarga(int carga){
@@ -56,7 +56,7 @@ public class Caneta {
         
     }
     public getCor(){
-        return this.cor = cor;
+        return this.cor;
     }
     public void setCor(String cor){
         this.cor = cor;
