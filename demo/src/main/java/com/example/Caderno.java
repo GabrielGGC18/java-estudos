@@ -40,15 +40,37 @@ public class Caderno {
             System.out.println("Estou escrevendo no caderno.");
         }
     }
-    public getAbrir(){
-        return this.aberto;
-
+    public String getCor() {
+        return this.cor;
     }
-    public setAbrir(String aberto){
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public String getMarca() {
+        return this.marca;
+    }
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public int getFolhas() {
+        return this.folhas;
+    }
+    public void setFolhas(int folhas) {
+        this.folhas = folhas;
+    }
+
+    public boolean isAberto() {
+        return this.aberto;
+    }
+    public void setAberto(boolean aberto) {
         this.aberto = aberto;
-        if{
-            System.out.println("Caderno aberto"+aberto);
-        } 
+        if (aberto) {
+            System.out.println("Caderno aberto");
+        } else {
+            System.out.println("Caderno fechado");
+        }
     }
     
 }
