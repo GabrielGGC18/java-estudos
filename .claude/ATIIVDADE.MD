@@ -1,76 +1,63 @@
-## ATIVIDADE DE JAVA DE ONDE PARAMOS CONTEXTO JAVA-MENTOR
-Montaria aprovado. Próximo: Peao.java.                                                                                                                                                          
-                                                                                                                                                                                                  
-  Conceitos novos:                                                                                                                                                                                
-  1. Composição: Peao TEM Montaria[] (atributo private Montaria[] montarias)                                                                                                                      
-  2. Sobrecarga: mesmo nome, params diferentes — exibirInfo() e exibirInfo(boolean resumido)                                                                                                      
-  3. this(...): construtor chama outro construtor (primeira linha)                                                                                                                                
-  4. Init array: this.montarias = new Montaria[5];                                                                                                                                                
-  5. toString() / equals(): sobrescrever Object com @Override                                                                                                                                     
-                                                                                                                                                                                                  
-  Esqueleto peao/Peao.java:                                                                                                                                                                       
-                                                                                                                                                                                                
-  public class Peao {                                                                                                                                                                             
-      // atributos privados: nome, apelido, categoria, montarias[]                                                                                                                                
-                                                                                                                                                                                                
-      // construtor default — inicializa new Montaria[5]                                                                                                                                          
-      // construtor (nome, apelido, categoria, montarias[])                                                                                                                                     
-                                                                                                                                                                                                  
-      // getters/setters                                                                                                                                                                        
-                                                                                                                                                                                                  
-      // exibirInfo()                  → tudo
-      // exibirInfo(boolean resumido)  → resumido=true só nome+apelido                                                                                                                            
-                                                                                                                                                                                                
-      // @Override toString()                                                                                                                                                                     
-      // @Override equals(Object o)    → igual se nome+apelido iguais
-  }                                                                                                                                                                                               
-      49          this.modalidade = modalidade;
-      50 -    }m    public void exibirInfo(){                                                                                                                                              
-      50 +    }                                                                                                                                                                            
-      51 +                                                                                                                                                                                 
-      52 +    public void exibirInfo(){                                                                                                                                                    
-      53          System.out.println("Animal: " + nomeAnimal);
-      54          System.out.println("Peso: "+ peso);
-      55          System.out.println("Nivel Braveza: "+nivelBraveza);
+## ATIVIDADE DE JAVA — ONDE PARAMOS
 
-● Bash(cd /home/gabriel/java-estudos/peao && javac Modalidade.java Categoria.java Montaria.java 2>&1)
-  ⎿  Error: Exit code 127
-     /bin/bash: line 1: javac: command not found
-    
-● javac não instalado aqui. Mas código tá ok agora visualmente. Próximo passo: classe Peao.
+**Data ultima sessao:** 2026-05-05
 
-● java-mentor(Next step Peao class)
-  ⎿  Done (0 tool uses · 12.1k tokens · 22s)
-  (ctrl+o to expand)
+### Status Peao.java
 
-● Montaria aprovado. Próximo: Peao.java.
+FEITO:
+- Classe `Peao` (PascalCase) renomeada
+- Atributos `private`: nome, apelido, categoria, montarias[]
+- Construtor 4 args (nome, apelido, categoria, montarias[])
+- Getters/setters todos
+- `exibirInfo()` versao completa
+- `@Override toString()` retornando `"Peao{nome=..., apelido=...}"`
 
-  Conceitos novos:
-  1. Composição: Peao TEM Montaria[] (atributo private Montaria[] montarias)
-  2. Sobrecarga: mesmo nome, params diferentes — exibirInfo() e exibirInfo(boolean resumido)
-  3. this(...): construtor chama outro construtor (primeira linha)
-  4. Init array: this.montarias = new Montaria[5];
-  5. toString() / equals(): sobrescrever Object com @Override
+FALTA (proxima sessao):
 
-  Esqueleto peao/Peao.java:
-  public class Peao {
-      // atributos privados: nome, apelido, categoria, montarias[]
+1. **Construtor default** — inicializa `new Montaria[5]`:
+```java
+public Peao() {
+    this.montarias = new Montaria[5];
+}
+```
 
-      // construtor default — inicializa new Montaria[5]
-      // construtor (nome, apelido, categoria) — usa this(...)
-      // construtor (nome, apelido, categoria, montarias[])
+2. **Construtor 3 args** chamando `this(...)`:
+```java
+public Peao(String nome, String apelido, Categoria categoria) {
+    this(nome, apelido, categoria, new Montaria[5]);
+}
+```
 
-      // getters/setters
+3. **Sobrecarga `exibirInfo(boolean resumido)`**:
+```java
+public void exibirInfo(boolean resumido) {
+    if (resumido) {
+        System.out.println(nome + " (" + apelido + ")");
+    } else {
+        exibirInfo();
+    }
+}
+```
 
-      // exibirInfo()                  → tudo
-      // exibirInfo(boolean resumido)  → resumido=true só nome+apelido
+4. **`equals(Object o)`** — igual se nome+apelido iguais:
+```java
+@Override
+public boolean equals(Object o) {
+    if (this == o) return true;
+    if (!(o instanceof Peao)) return false;
+    Peao p = (Peao) o;
+    return nome.equals(p.nome) && apelido.equals(p.apelido);
+}
+```
 
-      // @Override toString()
-      // @Override equals(Object o)    → igual se nome+apelido iguais
-  }
+### Depois de Peao.java
 
-  Dicas:
-  - exibirInfo() percorrendo montarias[]: trate null (posições vazias).
-  - equals: começa com if (this == o) return true; e if (!(o instanceof Peao)) return false;.
+Arrumar `main.java`:
+- Renomear arquivo/classe `main` → `Main`
+- Remover `import java.peao;` (invalido)
+- L15: `List<Peao> peaos = new ArrayList<>();` (era `:` no final)
+- Instanciar `Peao` e testar `exibirInfo`, `toString`, `equals`
 
-  Manda 1ª versão.
+### Proxima fase
+
+Polimorfismo + classes abstratas / interfaces.
