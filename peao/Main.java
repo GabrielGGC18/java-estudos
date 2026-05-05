@@ -9,7 +9,7 @@ import java.util.Map;
 import java.peao;
 
 //Desenvolva um sistema em Java para gerenciar Peões de Rodeio e suas Montarias. Aplique os conceitos de POO
-public class main {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Peao> peaos = new ArrayList<>():

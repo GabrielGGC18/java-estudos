@@ -6,62 +6,66 @@ type: project
 
 ## Onde paramos
 
-O aluno criou sua primeira classe Java (`Caneta.java`) e instanciou um objeto dela no `Main.java`.
-Esta na **Fase 1 → transicao para Fase 2** da trilha (introducao a classes e objetos).
+Atividade atual: **Peao.java** (ver `.claude/ATIIVDADE.MD`).
+Montaria.java aprovado. Proximo: criar classe `Peao` com composicao de `Montaria[]`.
 
 ---
 
-## O que foi feito
+## CONCLUIDO
 
-- Criou a classe `Caneta` com atributos: `modelo`, `cor`, `ponta` (float), `carga` (int), `tampada` (boolean)
-- Criou metodos: `status()`, `rabiscar()`, `tampar()`, `destampar()`
-- Usou `this` corretamente dentro do metodo `status()`
-- Instanciou `Caneta c0 = new Caneta()` no `Main.java`
-- Atribuiu valores: `c0.cor`, `c0.ponta`, `c0.tampada`
+### Fase 1 — Caneta (CONCLUIDA)
+- Classe `Caneta` com atributos `modelo`, `cor`, `ponta`, `carga`, `tampada`
+- Metodos `status()`, `rabiscar()`, `tampar()`, `destampar()`
+- Uso de `this`
+- Instanciacao em `Main.java`
+- Correcoes feitas:
+  - `System.out,println` → `System.out.println`
+  - Chaves balanceadas em `Main.java`
+  - Removido `c0.status()` duplicado
+  - Setados `c0.modelo` e `c0.carga` antes do `status()`
+- Perguntas respondidas: `.` vs `,`, String nao inicializada = `null`, int = `0`
+
+### Fase 2 — Encapsulamento + Heranca (CONCLUIDA)
+- Modalidade, Categoria, Montaria criados e aprovados
 
 ---
 
-## O que falta CORRIGIR
+## Atividade ATUAL — Peao.java
 
-### Caneta.java — linha 10
+Conceitos novos:
+1. Composicao: `Peao` TEM `Montaria[]` (atributo `private Montaria[] montarias`)
+2. Sobrecarga: `exibirInfo()` e `exibirInfo(boolean resumido)`
+3. `this(...)`: construtor chama outro construtor (primeira linha)
+4. Init array: `this.montarias = new Montaria[5];`
+5. `toString()` / `equals()`: sobrescrever `Object` com `@Override`
+
+Esqueleto:
 ```java
-// ERRADO:
-System.out,println("Modelo: " + this.modelo);
+public class Peao {
+    // atributos privados: nome, apelido, categoria, montarias[]
 
-// CORRETO:
-System.out.println("Modelo: " + this.modelo);
+    // construtor default — inicializa new Montaria[5]
+    // construtor (nome, apelido, categoria) — usa this(...)
+    // construtor (nome, apelido, categoria, montarias[])
+
+    // getters/setters
+
+    // exibirInfo()                  → tudo
+    // exibirInfo(boolean resumido)  → resumido=true só nome+apelido
+
+    // @Override toString()
+    // @Override equals(Object o)    → igual se nome+apelido iguais
+}
 ```
-Virgula no lugar de ponto — erro critico, nao compila.
 
-### Main.java — chaves faltando
-O arquivo tem mais `{` do que `}`. Falta pelo menos uma `}` para fechar o metodo `main` ou a classe `Main`.
+Dicas:
+- `exibirInfo()` percorrendo `montarias[]`: tratar `null` (posicoes vazias)
+- `equals`: comecar com `if (this == o) return true;` e `if (!(o instanceof Peao)) return false;`
 
-### Main.java — status() chamado duas vezes
-```java
-c0.status();
-c0.status(); // <- remover esta linha (provavelmente acidente)
-```
-
-### Main.java — modelo e carga sem valor
-`c0.modelo` e `c0.carga` nunca foram definidos antes de chamar `status()`.
-Resultado: `modelo` vai imprimir `null`, `carga` vai imprimir `0`.
-O aluno precisa adicionar:
-```java
-c0.modelo = "BIC";
-c0.carga = 80;
-```
+Aluno deve mandar 1a versao.
 
 ---
 
-## Perguntas abertas (ainda nao respondidas pelo aluno)
+## Proximo passo apos Peao
 
-1. Por que usamos ponto `.` e nao virgula `,` em `System.out.println`?
-2. O que aparece quando um atributo String nao e inicializado? (resposta esperada: `null`)
-3. O que aparece quando um atributo int nao e inicializado? (resposta esperada: `0`)
-
----
-
-## Proximo passo apos correcoes
-
-Introducao a **encapsulamento**: tornar os atributos `private` e criar getters/setters.
-Mostrar por que `c0.cor = "vermelho"` direto no Main e uma ma pratica (quebra encapsulamento).
+Polimorfismo + classes abstratas / interfaces.

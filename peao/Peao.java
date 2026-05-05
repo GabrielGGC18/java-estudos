@@ -1,11 +1,11 @@
-public class peao {
-    String nome;
-    String apelido;
-    Categoria categoria;
-    Montarias[] montarias;
+public class Peao {
+    private String nome;
+    private String apelido;
+    private Categoria categoria;
+    private Montaria[] montarias;
 
 
-    public peao(String nome, String apelido, Categoria categoria, Montarias[] montarias) {
+    public Peao(String nome, String apelido, Categoria categoria, Montaria[] montarias) {
         this.nome = nome;
         this.apelido = apelido;
         this.categoria = categoria;
@@ -36,11 +36,11 @@ public class peao {
         this.categoria = categoria;
     }
 
-    public Montarias[] getMontarias() {
+    public Montaria[] getMontarias() {
         return montarias;
     }
 
-    public void setMontarias(Montarias[] montarias) {
+    public void setMontarias(Montaria[] montarias) {
         this.montarias = montarias;
     }
 
@@ -51,6 +51,8 @@ public class peao {
         System.out.println("Montarias: " + java.util.Arrays.toString(montarias));
 
     }
-    @override toString(){
-        this.modalidade = modalidade;}
+    @Override
+    public String toString(){
+            return "Peao{nome=" + nome + ", apelido=" + apelido +"}";
+        }
 }    
