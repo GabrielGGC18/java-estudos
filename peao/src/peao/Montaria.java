@@ -1,4 +1,5 @@
-public class Montaria {
+package peao;
+public abstract class Montaria {
     private String nomeAnimal;
     private double peso;
     private int nivelBraveza;
@@ -55,4 +56,5 @@ public class Montaria {
         System.out.println("Nivel Braveza: "+nivelBraveza);
         System.out.println("Modalidade: "+modalidade);
     }    
+    public abstract String comportamentoNaArena();
 }

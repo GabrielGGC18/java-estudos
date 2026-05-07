@@ -1,3 +1,5 @@
+package peao;
+
 public class Peao {
     private String nome;
     private String apelido;

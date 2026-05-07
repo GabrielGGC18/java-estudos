@@ -1,3 +1,4 @@
+package peao;
 public enum Modalidade {
     TOURO,
     CAVALO_FERRARI,
