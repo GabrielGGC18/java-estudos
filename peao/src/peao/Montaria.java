@@ -1,15 +1,17 @@
 package peao;
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Montaria {
     private String nomeAnimal;
     private double peso;
     private int nivelBraveza;
     private Modalidade modalidade;
 
-
     public Montaria(String nomeAnimal, double peso, int nivelBraveza, Modalidade modalidade) {
         this.nomeAnimal = nomeAnimal;
         this.peso = peso;
-        this.nivelBraveza = nivelBraveza;
+        setNivelBraveza(nivelBraveza);
         this.modalidade = modalidade;
     }
 
@@ -49,6 +51,7 @@ public abstract class Montaria {
     public void setModalidade(Modalidade modalidade) {
         this.modalidade = modalidade;
     }
+
 
     public void exibirInfo(){
         System.out.println("Animal: " + nomeAnimal);
