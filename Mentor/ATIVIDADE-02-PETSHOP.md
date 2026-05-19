@@ -129,3 +129,27 @@ Atualizar `Mentor/JAVA-ESTUDOS.MD` (ou criar `Mentor/ATIVIDADE-02-STATUS.md`) co
 - O que travou e por que
 - Conceitos que ainda parecem nebulosos
 - Proximo passo
+
+---
+
+## ONDE PARAMOS (2026-05-19)
+
+**Concluido:**
+- `Porte.java` OK — enum com construtor + atributo `precoBasicoBanho` + getter. Funciona.
+
+**Em andamento:**
+- `Animal.java` — esqueleto criado, mas com 5 erros pendentes na ultima revisao:
+  1. Linha 10: `setidade(idade)` no construtor (errado, e `setIdade` — case-sensitive)
+  2. Linha 27: `if ( idade < 0 || 50> )` — sintaxe quebrada, falta operando. Deve ser `idade > 50` (ou so validar `idade < 0` conforme spec)
+  3. Linha 28: falta `;` no fim do `println`
+  4. Linha 30: `return;` esta FORA do `if` — mesma logica quebrada do antigo `setNivelBraveza`. Nunca atribui idade. Corrigir colocando `return;` dentro do `if` e add `this.idade = idade;` no final do metodo
+  5. `apresentar()` (linhas 40-44) nao chama `emitirSom()`. Spec pediu 4 prints (nome, idade, porte, som), so tem 3
+  - Detalhe: rotulos sem separador `": "` — sai grudado tipo `"NomeRex"`
+
+**Proxima sessao:**
+1. Consertar os 5 erros do `Animal.java`
+2. Criar `Cachorro.java` (extends Animal, override `emitirSom()` retornando "Au au")
+3. `Main.java` minima: 1 cachorro, chama `apresentar()`. Confirmar polimorfismo do `emitirSom` funcionando.
+4. Seguir ordem da atividade (passos 3 em diante)
+
+**Modo ativo:** mentor (apontar erros, nao corrigir). Ver `Mentor/JAVA-ESTUDOS.MD`.
