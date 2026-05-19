@@ -63,9 +63,6 @@ javac peao/*.java
 java peao.Main
 ```
 
-### Tracking de sessao
-
-O arquivo `.claude/ATIIVDADE.MD` guarda o estado da ultima sessao de estudo (o que foi feito, o que falta, conceitos cobertos, proxima fase). Sempre consultado no inicio de uma nova sessao para retomar de onde parou.
 
 ### Proximos passos
 
