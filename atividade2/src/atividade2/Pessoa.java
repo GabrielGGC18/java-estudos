@@ -1,11 +1,46 @@
 package atividade2;
 
 public class Pessoa {
-    // TODO: atributos nome, cpf, sexo (Sexo)
+    private String nome;
+    private String cpf;
+    private Sexo sexo;
 
-    // TODO: construtor
+    public Pessoa(String nome, String cpf, Sexo sexo) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.sexo = sexo;
+    }
 
-    // TODO: getters / setters
+    public String getNome() {
+        return nome;
+    }
 
-    // TODO: @Override toString
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public Sexo getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(Sexo sexo) {
+        this.sexo = sexo;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", sexo=" + sexo +
+                '}';
+    }
 }

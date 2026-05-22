@@ -16,7 +16,6 @@ public class Main {
 
 
 
-
         // TODO: instanciar e inserir objetos no vetor
         // TODO: percorrer e imprimir todas as informacoes
     }
