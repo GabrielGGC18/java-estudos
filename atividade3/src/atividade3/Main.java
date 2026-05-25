@@ -1,44 +1,107 @@
 package atividade3;
 
 import java.util.List;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Main {
-    public static void main(String[] args) {
-        // TODO Q3: cadastrar 5 pessoas (lerDados) e imprimirLista
-        // TODO Q4: imprimirLista(lista, Sexo.MASCULINO)
-        // TODO Q5: testar ordenacoes por nome, idade, sexo (classes anonimas)
-        // TODO Q6: testar ordenacoes via lambda
+    public static void main(String[] args) {    
+        List<Pessoa> lista = new ArrayList<>();
+        for (int i = 0; i < 3 ; i++ ) { 
+            lista.add(lerDados());
+        }
+        imprimirLista(lista);
+
+        System.out.println("--- Por Nome (Anônima) ---");
+        imprimirListaOrdenadaPorNome(lista);
+        
+        System.out.println("--- Por idade (Anônima) ---");
+        imprimirListaOrdenadaPorIdade(lista);
+        
+        System.out.println("--- Por sexo (Anônima) ---");
+        imprimirListaOrdenadaPorSexo(lista);
+        
+        System.out.println("--- Por nome (lambda) ---");
+        imprimirListaOrdenadaPorNomeLambda(lista);
+        
+        System.out.println("--- Por idade (lambda) ---");
+        imprimirListaOrdenadaPorIdadeLambda(lista);
+        
+        System.out.println("--- Por sexo (lambda) ---");
+        imprimirListaOrdenadaPorSexoLambda(lista);
+        
+        System.out.println("--- Só Masculino ---");
+        imprimirLista(lista, Sexo.MASCULINO);
     }
 
-    // Q3
     public static Pessoa lerDados() {
-        // TODO: ler dados do usuario (Scanner) e retornar Pessoa
-        return null;
+        Scanner sc = new Scanner(System.in);
+        String nome = sc.nextLine();
+        int idade = sc.nextInt();
+        sc.nextLine();
+        Sexo sexo = Sexo.valueOf(sc.next());
+        String ddd = sc.next();
+        int numero = sc.nextInt();
+        Telefone telefone = new Telefone(ddd, numero);
+
+        return new Pessoa(nome, idade, sexo, telefone);
     }
 
-    // Q3
     public static void imprimirLista(List<Pessoa> lista) {
-        // TODO: imprimir todas as pessoas, inclusive relacionamentos
+        for (Pessoa p : lista ) {p.imprimir(); }
     }
 
-    // Q4
     public static void imprimirLista(List<Pessoa> lista, Sexo sexo) {
-        // TODO: imprimir apenas as pessoas do sexo informado
+        for (Pessoa p : lista ){
+            if (p.getSexo() == sexo) {
+                p.imprimir();
+            }
+        }
     }
-
-    // Q5 — classes anonimas (Comparator)
     public static void imprimirListaOrdenadaPorNome(List<Pessoa> lista) {
-        // TODO: ordenar por nome usando classe anonima
-    }
+        lista.sort(new Comparator<Pessoa>() {
+            @Override
+            public int compare(Pessoa x, Pessoa y){
+                return x.getNome().compareTo(y.getNome());
+            }
+        });
+        imprimirLista(lista);    }
 
     public static void imprimirListaOrdenadaPorIdade(List<Pessoa> lista) {
-        // TODO: ordenar por idade usando classe anonima
+        lista.sort(new Comparator<Pessoa>(){
+            @Override
+            public int compare(Pessoa a, Pessoa b){
+                return a.getIdade() - (b.getIdade());
+            } 
+        });
+        imprimirLista(lista);        
     }
 
     public static void imprimirListaOrdenadaPorSexo(List<Pessoa> lista) {
-        // TODO: ordenar por sexo usando classe anonima
+        lista.sort(new Comparator<Pessoa>(){
+            @Override
+            public int compare(Pessoa x , Pessoa y){
+                return x.getSexo().compareTo(y.getSexo());
+            }   
+        });
+        imprimirLista(lista);
+
     }
 
-    // Q6 — reimplementar Q5 com lambda
-    // TODO: versoes lambda dos tres metodos de ordenacao
+    public static void imprimirListaOrdenadaPorNomeLambda(List<Pessoa> lista){
+        lista.sort(((x, y) -> x.getNome().compareTo(y.getNome())));
+        imprimirLista(lista);
+
+    }
+    public static void imprimirListaOrdenadaPorIdadeLambda(List<Pessoa> lista){
+        lista.sort(((a, b) -> a.getIdade() - b.getIdade()));
+        imprimirLista(lista);
+
+    }
+    public static void imprimirListaOrdenadaPorSexoLambda(List<Pessoa> lista){
+        lista.sort((x, y)-> x.getSexo().compareTo(y.getSexo()));
+        imprimirLista(lista);
+    }
+
 }

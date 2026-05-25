@@ -1,16 +1,40 @@
 package atividade3;
 
 public class Telefone implements Impressao {
-    // TODO: atributos (ddd, numero, tipo...)
 
-    // TODO: construtor(es)
+    private String ddd;
+    private int numero;
 
-    // TODO: getters / setters
+    public Telefone(String ddd, int numero){
+        this.ddd = ddd;
+        this.numero = numero;
+    }
 
-    // TODO: @Override toString
+    public String getDdd(){
+        return ddd;
+    }
+    public void setDdd(String ddd) {
+        this.ddd = ddd;
+        }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
 
     @Override
+    public String toString(){
+        return "Telefone{ddd= '"+ ddd + "numero= ' " + numero +"}";
+    }
+    
     public void imprimir() {
-        // TODO: imprimir todos os atributos do telefone
+        System.out.println( "Telefone{"+
+                "ddd='" + ddd +'\''+
+                ", numero='" + numero +
+                "}");
+
     }
 }

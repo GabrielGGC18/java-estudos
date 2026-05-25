@@ -2,7 +2,6 @@ package atividade1;
 
 public class Main {
     public static void main(String[] args) {
-        // TODO: criar vetor da classe C_????
         Animal[] animais = new Animal[6];
         animais[0] = new Animal(0, "Joadanete", Fazenda.VACA);
         animais[1] = new Animal(1, "Claudenilson", Fazenda.TOURO);
@@ -13,10 +12,5 @@ public class Main {
         for (int i = 0; i< animais.length; i++){
             System.out.println(animais[i]);
         }
-
-
-
-        // TODO: instanciar e inserir objetos no vetor
-        // TODO: percorrer e imprimir todas as informacoes
     }
 }

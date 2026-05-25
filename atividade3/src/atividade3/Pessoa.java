@@ -1,16 +1,59 @@
 package atividade3;
 
 public class Pessoa implements Impressao {
-    // TODO: atributos (nome, idade, sexo (Sexo), telefone (Telefone)...)
+    private String nome;
+    private int idade;
+    private Sexo sexo;
+    private Telefone telefone; 
 
-    // TODO: construtor(es)
+    public Pessoa(String nome, int idade, Sexo sexo, Telefone telefone){
+        this.nome = nome;
+        this.idade = idade;
+        this.sexo = sexo;
+        this.telefone = telefone;
+    }
+    public String getNome() {
+        return nome;
+    }
 
-    // TODO: getters / setters
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-    // TODO: @Override toString (incluir relacionamento Telefone)
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public Sexo getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(Sexo sexo) {
+        this.sexo = sexo;
+    }
+
+    public Telefone getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(Telefone telefone) {
+        this.telefone = telefone;
+    }
+
+    @Override
+    public String toString(){
+        return "Pessoa{nome='" + nome + "idade='" + idade + "sexo='" + sexo + "telefone='" + telefone + "}";
+    }
 
     @Override
     public void imprimir() {
-        // TODO: imprimir todos os atributos, inclusive o Telefone
+        System.out.println("Nome: " + nome + ", idade: " + idade + ", sexo: " + sexo + ", telefone: " + telefone);
+                
+
+        
     }
 }
