@@ -27,9 +27,9 @@ public class Telefone implements Impressao {
 
     @Override
     public String toString(){
-        return "Telefone{ddd= '"+ ddd + "numero= ' " + numero +"}";
+        return "Telefone{ddd= '"+ ddd + "', numero= " + numero +"}";
     }
-    
+    @Override
     public void imprimir() {
         System.out.println( "Telefone{"+
                 "ddd='" + ddd +'\''+

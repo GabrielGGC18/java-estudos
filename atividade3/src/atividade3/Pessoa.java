@@ -46,7 +46,7 @@ public class Pessoa implements Impressao {
 
     @Override
     public String toString(){
-        return "Pessoa{nome='" + nome + "idade='" + idade + "sexo='" + sexo + "telefone='" + telefone + "}";
+        return "Pessoa{nome='" + nome + "', idade=" + idade + ", sexo=" + sexo + ", telefone='" + telefone + "}";
     }
 
     @Override

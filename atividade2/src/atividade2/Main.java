@@ -12,7 +12,7 @@ public class Main {
             String nome = sc.nextLine();
             String cpf = sc.nextLine();
             String s = sc.nextLine();
-            Sexo sexo = Sexo.valueOf(s);
+            Sexo sexo = Sexo.valueOf(s.toUpperCase());
             pessoas.add(new Pessoa(nome, cpf, sexo));
         }
         imprimirTudo(pessoas);

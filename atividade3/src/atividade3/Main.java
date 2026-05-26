@@ -40,7 +40,7 @@ public class Main {
         String nome = sc.nextLine();
         int idade = sc.nextInt();
         sc.nextLine();
-        Sexo sexo = Sexo.valueOf(sc.next());
+        Sexo sexo = Sexo.valueOf(sc.next().toUpperCase());
         String ddd = sc.next();
         int numero = sc.nextInt();
         Telefone telefone = new Telefone(ddd, numero);
