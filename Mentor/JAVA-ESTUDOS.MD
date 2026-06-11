@@ -6,3 +6,4 @@
 ### Agents e Skills
 
 **Objetivo dos agents e skills** Eles tem como objetivo me auxiliar no aprendizado e me apontar os erros e não corrigir, me passar exercicios de treinos e fixação.
+claude --resume 48392b28-ec61-4263-87f4-73a313d0b887
